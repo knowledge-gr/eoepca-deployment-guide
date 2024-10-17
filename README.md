@@ -1,3 +1,24 @@
+# Πληροφορίες
+EOEPCA Documentation: https://eoepca.readthedocs.io/projects/deploy/en/latest/
+
+Παρατηρήσεις: https://docs.google.com/document/d/1rxYtickZI6MkprQlasZ6Y5CBAEAzM6tTECbc5wjELkc/edit?usp=sharing
+
+Το Project τρέχει μόνο σε Linux, για Windows users θα χρειαστείτε [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+Για να τρέξει το project αρχικά πρέπει να κατεβάσουμε τα απαραίτητα εργαλεία, θα χρειαστούμε το πακέτο `jq` και τα [Prerequisite Tooling](https://eoepca.readthedocs.io/projects/deploy/en/latest/cluster/prerequisite-tooling/) του EOEPCA.
+
+Για local dev environment χρησιμοποιείται το [Minikube](https://minikube.sigs.k8s.io/docs/), πριν την εκκίνηση ενός από τα profiles του EOEPCA πρέπει να πάμε στα options του (πχ simple-options) και να βάλουμε την τοπική μας ip, πχ:
+
+```
+public_ip="192.168.49.2"
+domain="192-168-49-2.nip.io"
+# Προσοχή στα comments!
+```
+
+Για να βρούμε την local ip μας μπορούμε να τρέξουμε `ip address`, για σύνδεση με καλώδιο συνήθως η ip της συσκευής με όνομα: `enp1s0` είναι αυτή που ψάχνουμε, για wifi θα είναι πχ `wlp2s0` (τα νούμερα στα ονόματα μπορεί να διαφέρουν).
+
+Τέλος τρέχουμε `./deploy/<profile>/<profile>` για να τρέξουμε το profile που θέλουμε (πχ `./deploy/simple/simple`)
+
 # EOEPCA Deployment Guide
 
 The guide is written in Markdown and rendered through the [`mkdocs` tool](https://www.mkdocs.org/).
