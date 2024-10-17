@@ -90,3 +90,8 @@ if [ "${REQUIRE_PORTAL}" = "true" ]; then
   echo -e "\nDeploy eoepca portal..."
   ./eoepca-portal.sh "${ACTION}" "${domain}"
 fi
+
+if [ "${EXTRAS}" = "true" ]; then
+    echo -e "\nDeploying Prometheus and Graphana"
+    ./extras.sh "${ACTION}"
+fi

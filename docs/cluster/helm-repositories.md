@@ -47,6 +47,12 @@ helm repo add sealed-secrets https://bitnami-labs.github.io/sealed-secrets
 helm repo add harbor https://helm.goharbor.io
 ```
 
+### Prometheus
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
 ## Repo Update
 
 Refresh the local repo cache, after `helm repo add`...

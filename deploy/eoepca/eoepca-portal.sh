@@ -25,12 +25,12 @@ main() {
 }
 
 deployService() {
+    echo "workscape_url: $(httpScheme)://workspace-api.${domain}/docs#"
   if [ "${ACTION_HELM}" = "uninstall" ]; then
     helm --namespace "${NAMESPACE}" uninstall eoepca-portal
   else
     # helm chart
-    # serviceValues | helm ${ACTION_HELM} eoepca-portal eoepca-portal -f - \
-    serviceValues | helm ${ACTION_HELM} eoepca-portal ~/develop/EOEPCA/helm-charts-dev/charts/eoepca-portal -f - \
+    serviceValues | helm ${ACTION_HELM} eoepca-portal eoepca-portal -f - \
       --repo https://eoepca.github.io/helm-charts \
       --namespace "${NAMESPACE}" --create-namespace \
       --version 1.0.13
